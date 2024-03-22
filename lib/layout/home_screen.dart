@@ -58,8 +58,9 @@ class _HomeScreenState extends State<HomeScreen> {
             : AppBar(
                 title: TextFormField(
                 decoration: InputDecoration(
-                    focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.transparent))),
+                  focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.transparent))
+
+                    ),
                 controller: searchController,
               )),
         body: selectedCategory == null
