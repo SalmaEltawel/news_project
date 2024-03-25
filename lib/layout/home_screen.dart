@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:news/models/category_model.dart';
 import 'package:news/screens/category_tabs.dart';
-import 'package:news/screens/content_drawer.dart';
 import 'package:news/screens/custom_drawer.dart';
 import 'package:news/screens/data_tab.dart';
 import 'package:news/screens/settings.dart';
-
 class HomeScreen extends StatefulWidget {
   static const String routeName = "homeScreen";
 
@@ -30,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
               DecorationImage(image: AssetImage("assets/images/pattern.png"))),
       child: Scaffold(
         drawerEnableOpenDragGesture: true,
-        drawer: CustomDrawer(onClick: onClickDrawer,),
+        drawer: CustomDrawer( onClickDrawer,),
         backgroundColor: Colors.transparent,
         appBar: selected
             ? AppBar(

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'content_drawer.dart';
 
 class CustomDrawer extends StatelessWidget {
-  CustomDrawer({super.key, required this.onClick});
+  CustomDrawer(this.onClick,{super.key });
 
   Function onClick;
   static const CATEGORY_Id = 1;
@@ -39,6 +39,7 @@ class CustomDrawer extends StatelessWidget {
           InkWell(
               onTap: () {
                 onClick(CATEGORY_Id);
+                Navigator.pop(context);
               },
               child: ContantDrawer(
                 text: 'Categories',
