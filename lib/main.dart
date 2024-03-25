@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news/layout/home_screen.dart';
+import 'package:news/screens/settings.dart';
 import 'package:news/screens/splash_screen.dart';
 void main() {
   runApp(const MyApp());
@@ -15,6 +16,8 @@ class MyApp extends StatelessWidget {
         SplashScreen.routeName:(context)=>SplashScreen(),
 
         HomeScreen.routeName:(context)=>HomeScreen(),
+        Settings.routeName:(context)=>Settings(),
+
 
       },
     );

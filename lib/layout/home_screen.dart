@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:news/models/category_model.dart';
 import 'package:news/screens/category_tabs.dart';
+import 'package:news/screens/content_drawer.dart';
+import 'package:news/screens/custom_drawer.dart';
 import 'package:news/screens/data_tab.dart';
+import 'package:news/screens/settings.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = "homeScreen";
@@ -27,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
               DecorationImage(image: AssetImage("assets/images/pattern.png"))),
       child: Scaffold(
         drawerEnableOpenDragGesture: true,
-        drawer: Drawer(),
+        drawer: CustomDrawer(onClick: onClickDrawer,),
         backgroundColor: Colors.transparent,
         appBar: selected
             ? AppBar(
@@ -100,5 +103,17 @@ class _HomeScreenState extends State<HomeScreen> {
   onCategoryClick(category) {
     selectedCategory = category;
     setState(() {});
+  }
+  onClickDrawer(id){
+    if(id==CustomDrawer.CATEGORY_Id){
+      selectedCategory=null;
+      setState(() {
+      });
+    }else if(id==CustomDrawer.SETTING_ID){
+      Navigator.pushNamed(context, Settings.routeName);
+      setState(() {
+
+      });
+    }
   }
 }
