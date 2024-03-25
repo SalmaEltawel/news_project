@@ -4,9 +4,9 @@ import 'package:news/models/news_response.dart';
 import 'package:news/models/source_response.dart';
 import 'package:news/shared/constant/constant.dart';
 class ApiManager{
-  Future<SourcesResponse> getSources(String category,String name) async{
+  Future<SourcesResponse> getSources(String category,) async{
     Uri url=Uri.https(Constants.BASE_URL,"/v2/top-headlines/sources",
-        {"apiKey":"45b52354f04845c4b65262caf72fbab9","category":category,"name":name});
+        {"apiKey":"45b52354f04845c4b65262caf72fbab9","category":category,});
    http. Response response=await  http.get(url);
    Map<String,dynamic> json=jsonDecode(response.body);
     return SourcesResponse.fromJson(json);

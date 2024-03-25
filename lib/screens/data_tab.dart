@@ -4,14 +4,13 @@ import 'package:news/screens/news_tab.dart';
 import '../shared/network/remote/api_manager.dart';
 
 class DataTab extends StatelessWidget {
-   DataTab({super.key,required this.categoryId,required this.name});
+   DataTab({super.key,required this.categoryId});
   String categoryId;
-  String name;
 
   @override
   Widget build(BuildContext context) {
     return  FutureBuilder(
-      future: ApiManager().getSources(categoryId,name),
+      future: ApiManager().getSources(categoryId),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(child: CircularProgressIndicator());

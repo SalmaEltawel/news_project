@@ -26,8 +26,9 @@ class _HomeScreenState extends State<HomeScreen> {
           image:
               DecorationImage(image: AssetImage("assets/images/pattern.png"))),
       child: Scaffold(
+        drawerEnableOpenDragGesture: true,
+        drawer: Drawer(),
         backgroundColor: Colors.transparent,
-        drawer: const Drawer(),
         appBar: selected
             ? AppBar(
                 iconTheme: const IconThemeData(color: Colors.white),
@@ -56,29 +57,46 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               )
             : AppBar(
+          leading: SizedBox(),
+          leadingWidth: 1,
+          backgroundColor: Colors.green,
+            shape: const OutlineInputBorder(
+                borderRadius: BorderRadius.only(
+                    bottomRight: Radius.circular(30),
+                    bottomLeft: Radius.circular(30)),
+                borderSide: BorderSide(color: Colors.transparent)),
                 title: TextFormField(
                 decoration: InputDecoration(
-                  focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.transparent))
+                  suffixIcon: Icon(Icons.search,color: Colors.green),
+                  prefixIcon: InkWell(
+                    onTap: () {
+                    },
+                      child: Icon(Icons.close,color: Colors.green)),
+                  hintText: "Search article",
+                    hintStyle:TextStyle(color: Colors.green) ,
+                    filled: true,
+                    fillColor:  Colors.white,
+                    focusedBorder: UnderlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
+                        borderSide: BorderSide(color: Colors.white)),
+                  enabledBorder: UnderlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
+                      borderSide: BorderSide(color: Colors.white,)),
 
-                    ),
+                ),
                 controller: searchController,
-              )),
+                              )),
         body: selectedCategory == null
             ? CategoryTab(
                 onClick: onCategoryClick,
               )
             : DataTab(
-                categoryId: selectedCategory!.id,
-         name: searchController.text
-
-
-              ),
+                categoryId: selectedCategory!.id,),
       ),
     );
   }
 
   CategoryModel? selectedCategory;
-
   onCategoryClick(category) {
     selectedCategory = category;
     setState(() {});
