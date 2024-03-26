@@ -4,21 +4,18 @@ import 'package:news/screens/category_tabs.dart';
 import 'package:news/screens/custom_drawer.dart';
 import 'package:news/screens/data_tab.dart';
 import 'package:news/screens/settings.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class HomeScreen extends StatefulWidget {
   static const String routeName = "homeScreen";
-
   HomeScreen({
     super.key,
   });
-
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
-
 class _HomeScreenState extends State<HomeScreen> {
   bool selected = true;
   var searchController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -40,7 +37,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         bottomLeft: Radius.circular(30)),
                     borderSide: BorderSide(color: Colors.transparent)),
                 backgroundColor: Colors.green,
-                title: const Text("News App",
+                title:  Text(
+                   AppLocalizations.of(context)!.appName,
                     style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.w400,
@@ -73,7 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     onTap: () {
                     },
                       child: Icon(Icons.close,color: Colors.green)),
-                  hintText: "Search article",
+                  hintText: AppLocalizations.of(context)!.search,
                     hintStyle:TextStyle(color: Colors.green) ,
                     filled: true,
                     fillColor:  Colors.white,

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 import 'content_drawer.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CustomDrawer extends StatelessWidget {
-  CustomDrawer(this.onClick,{super.key });
+  CustomDrawer(this.onClick, {super.key});
 
   Function onClick;
   static const CATEGORY_Id = 1;
@@ -26,7 +27,7 @@ class CustomDrawer extends StatelessWidget {
               color: Colors.green,
             ),
             child: Center(
-              child: Text("News App",
+              child: Text(AppLocalizations.of(context)!.appName,
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 30,
@@ -42,7 +43,7 @@ class CustomDrawer extends StatelessWidget {
                 Navigator.pop(context);
               },
               child: ContantDrawer(
-                text: 'Categories',
+                text:AppLocalizations.of(context)!.categories,
                 icon: Icons.list,
               )),
           SizedBox(
@@ -53,7 +54,7 @@ class CustomDrawer extends StatelessWidget {
               onClick(SETTING_ID);
             },
             child: ContantDrawer(
-              text: 'Settings',
+              text: AppLocalizations.of(context)!.settings,
               icon: Icons.settings,
             ),
           ),

@@ -1,0 +1,18 @@
+{
+  "appName": "الأخبار ",
+  "categories": "التصنيفات",
+  "settings": "الاعدادات",
+  "appTitle": "اختر فئه اهتمامك",
+  "sports": "الرياضه",
+  "politics": "السياسه",
+  "health": "الصحه",
+  "business": "التجاره",
+  "environment": "البيئه",
+  "science": "العلوم",
+  "technology": "التكنولوجيا",
+  "language": "اللغه",
+  "english": "انجليزي",
+  "arabic": "عربي",
+  "search": "ابحث عن المقال"
+
+}

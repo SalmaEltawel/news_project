@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 class CategoryModel {
   String name;
 
@@ -17,7 +16,7 @@ class CategoryModel {
     return [
       CategoryModel(
           id: "sports",
-          name: "Sports",
+          name: "sports",
           Image: "assets/images/sports.png",
           color: Color(0xffC91C22)),
       CategoryModel(

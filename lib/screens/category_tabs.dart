@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:news/screens/category_item.dart';
 
 import '../models/category_model.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CategoryTab extends StatelessWidget {
   Function onClick;
@@ -16,7 +17,7 @@ class CategoryTab extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Column(
         children: [
-          Text("Pick your categoryof interest",
+          Text(AppLocalizations.of(context)!.appTitle,
               style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.w600,
